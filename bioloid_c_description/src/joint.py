@@ -31,16 +31,19 @@ def talker():
     rate.sleep()
 
     while not rospy.is_shutdown():
-      servo_states.header.stamp = rospy.Time.now()
       for i in range(len(servo_states.name)):
         #   print(i)
           servo_states.position[i] = 0.0
+      servo_states.header.stamp = rospy.Time.now() #always set the header stamp before updating the joints
       pub.publish(servo_states)
       rate.sleep()
+
+      #test move   
       for i in range(len(servo_states.name)):
         #   print(i)
           servo_states.position[i] = 0.628
-      servo_states.header.stamp = rospy.Time.now()
+      servo_states.header.stamp = rospy.Time.now() #always set the header stamp before updating the joints
+
       pub.publish(servo_states)
       rate.sleep()
 
