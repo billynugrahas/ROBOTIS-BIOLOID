@@ -1,5 +1,5 @@
 <launch>
-<arg name="model" default="$(find bioloid_c_description)/urdf/bioloid-fullarm.urdf"/>
+<arg name="model" default="$(find bioloid_c_description)/urdf/bioloid.urdf"/>
 
 <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
 
