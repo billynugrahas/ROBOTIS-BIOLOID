@@ -54,24 +54,6 @@
     <origin xyz="0.0 0.049 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-  <link name="left_arm_link">
-    <visual>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-      <geometry>
-        <mesh filename="package://bioloid_c_description/meshes/arm.dae"/>
-      </geometry>
-      <material name="blue"/>
-    </visual>
-  </link>
-
-  <joint name="left_arm_joint" type="revolute">
-    <axis xyz="1 0 0"/>
-    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
-    <parent link="left_shoulder_link"/>
-    <child link="left_arm_link"/>
-    <origin xyz="0.0 0.023 -0.0145" rpy="0.0 0.0 0.0"/>
-  </joint>
-
   <link name="left_forearm_link">
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
@@ -85,9 +67,9 @@
   <joint name="left_forearm_joint" type="revolute">
     <axis xyz="1 0 0"/>
     <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
-    <parent link="left_arm_link"/>
+    <parent link="left_shoulder_link"/>
     <child link="left_forearm_link"/>
-    <origin xyz="0.0 0.0 -0.0675" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.0 0.023 -0.0145" rpy="0.0 0.0 0.0"/>
   </joint>
 
   <!-- RIGHT ARM -->
@@ -110,24 +92,6 @@
     <origin xyz="0.0 -0.049 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
-  <link name="right_arm_link">
-    <visual>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-      <geometry>
-        <mesh filename="package://bioloid_c_description/meshes/arm.dae"/>
-      </geometry>
-      <material name="blue"/>
-    </visual>
-  </link>
-
-  <joint name="right_arm_joint" type="revolute">
-    <axis xyz="1 0 0"/>
-    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
-    <parent link="right_shoulder_link"/>
-    <child link="right_arm_link"/>
-    <origin xyz="0.0 -0.023 -0.0145" rpy="0.0 0.0 0.0"/>
-  </joint>
-
   <link name="right_forearm_link">
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
@@ -141,9 +105,9 @@
   <joint name="right_forearm_joint" type="revolute">
     <axis xyz="1 0 0"/>
     <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
-    <parent link="right_arm_link"/>
+    <parent link="right_shoulder_link"/>
     <child link="right_forearm_link"/>
-    <origin xyz="0.0 -0.0 -0.0675" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.0 -0.023 -0.0145" rpy="0.0 0.0 0.0"/>
   </joint>
 
 
